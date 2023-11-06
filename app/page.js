@@ -26,6 +26,13 @@ export default function Home() {
       >
         Go to about page
       </button>
+      <br />
+      <button
+        onClick={() => router.push("./lecture")}
+        className="bg-white text-black rounded-lg border-4 border-black px-2"
+      >
+        Go to lecture page
+      </button>
     </main>
   );
 }

@@ -33,6 +33,8 @@ export default function Home() {
       >
         Go to lecture page
       </button>
+      <br />
+      <Link href="/product">Go to product page.</Link>
     </main>
   );
 }

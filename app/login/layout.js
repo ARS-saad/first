@@ -1,3 +1,5 @@
+import Pic from "@/app/favicon.ico";
+import Image from "next/image";
 import Link from "next/link";
 
 function layout({ children }) {
@@ -25,6 +27,7 @@ function layout({ children }) {
       <Link href="/" className="bg-white text-black mx-2 rounded px-2">
         Go to home page
       </Link>
+      <Image src={Pic} alt="It's an icon" height={200} width={200} />
     </div>
   );
 }

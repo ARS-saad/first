@@ -6,14 +6,17 @@ const fetching = async () => {
 
 export default async function page() {
   const product = await fetching();
-  // console.log(product.title);
+  // console.log(product);
   // let x = [...product.posts];
   //   console.log(x.title);
   return (
     <div>
       <h1>Product list:</h1>
       {product.map((item) => (
-        <p>Title: {item.title}</p>
+        <div>
+          <p>Title: {item.title}</p>
+          <p>Body: {item.body}</p>
+        </div>
       ))}
     </div>
   );

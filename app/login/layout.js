@@ -32,4 +32,8 @@ function layout({ children }) {
   );
 }
 
+export const metadata = {
+  title: "login's title!! ok",
+};
+
 export default layout;

@@ -1,8 +1,5 @@
-const fetching = async () => {
-  let data = await fetch("https://dummyjson.com/posts");
-  data = await data.json();
-  return data.posts;
-};
+import fetching from "@/lib/fetching";
+import Link from "next/link";
 
 export default async function page() {
   const product = await fetching();
@@ -13,10 +10,9 @@ export default async function page() {
     <div>
       <h1>Product list:</h1>
       {product.map((item) => (
-        <div>
-          <p>Title: {item.title}</p>
-          <p>Body: {item.body}</p>
-        </div>
+        <h1 key={item.id}>
+          <Link href={`/product/${item.id}`}>Title: {item.title}</Link>
+        </h1>
       ))}
     </div>
   );

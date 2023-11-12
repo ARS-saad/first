@@ -8,3 +8,17 @@ export function GET(req, { params }) {
     { status: 200 }
   );
 }
+
+export async function PUT(req, { params }) {
+  const data = user.filter((item) => item.id == params.id);
+  let payload = await req.json();
+  payload.id = params.id;
+  if (!payload.name) {
+    payload.name = data[0].name;
+  }
+  if (!payload.age) {
+    payload.age = data[0].age;
+  }
+  console.log(data[0].age);
+  return NextResponse.json({ result: payload, success: true }, { status: 200 });
+}

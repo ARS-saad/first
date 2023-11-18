@@ -12,6 +12,7 @@ function page() {
       body: JSON.stringify({ name, age }),
     });
     res = await res.json();
+    console.log(res);
     if (!res.success) {
       alert("Some ERROR...");
     }

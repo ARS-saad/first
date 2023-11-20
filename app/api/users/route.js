@@ -1,9 +1,15 @@
 import { user } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-export function GET() {
-  const data = user;
-  return NextResponse.json(data, { status: 200 });
+export async function GET() {
+  let data = await user;
+  // try {
+  //   await mongoose.connect(connectionStr);
+  //   data = await Product.find();
+  // } catch (error) {
+  //   data = { success: false };
+  // }
+  return NextResponse.json({ data });
 }
 
 export async function POST(req) {

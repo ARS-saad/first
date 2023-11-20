@@ -5,18 +5,17 @@ import { useState } from "react";
 function page() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
+  const [password, setPassword] = useState("");
 
   const addUser = async () => {
-    let res = await fetch("http://localhost:3000/api/users", {
-      method: "Post",
-      body: JSON.stringify({ name, age }),
+    let res = await fetch("http://localhost:3000/api/profiles", {
+      method: "POST",
+      body: JSON.stringify({ name, age, password }),
     });
     res = await res.json();
-    console.log(res);
-    if (!res.success) {
-      alert("Some ERROR...");
+    if (res.success) {
+      alert("New profile added");
     }
-    console.log(res);
   };
 
   return (
@@ -29,9 +28,15 @@ function page() {
         onChange={(e) => setName(e.target.value)}
       />
       <input
-        type="number"
+        type="text"
         placeholder="Enter age"
         onChange={(e) => setAge(e.target.value)}
+        className="my-2 rounded p-2 text-black font-bold"
+      />
+      <input
+        type="text"
+        placeholder="Enter password"
+        onChange={(e) => setPassword(e.target.value)}
         className="my-2 rounded p-2 text-black font-bold"
       />
       <button

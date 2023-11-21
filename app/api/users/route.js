@@ -9,7 +9,7 @@ export async function GET() {
   // } catch (error) {
   //   data = { success: false };
   // }
-  return NextResponse.json({ data });
+  return NextResponse.json({ data, success: true });
 }
 
 export async function POST(req) {

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-function page() {
+function Page() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +19,7 @@ function page() {
   };
 
   return (
-    <div className="flex flex-col bg-5 m-5  w-[500px]">
+    <div className="flex flex-col bg-5 m-5 mt-10 ml-[500px] w-[500px]">
       <h1 className="text-xl font-bold">Add New User</h1>
       <input
         type="text"
@@ -49,4 +49,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

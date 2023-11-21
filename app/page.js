@@ -35,6 +35,8 @@ export default function Home() {
       </button>
       <br />
       <Link href="/product">Go to product page.</Link>
+      <br />
+      <Link href="/user">Go to user page.</Link>
     </main>
   );
 }

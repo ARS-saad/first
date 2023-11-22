@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 function Page() {
@@ -39,12 +40,20 @@ function Page() {
         onChange={(e) => setPassword(e.target.value)}
         className="my-2 rounded p-2 text-black font-bold"
       />
-      <button
-        className="bg-white text-black rounded-lg border-4 border-black px-2 w-[100px]"
-        onClick={addUser}
-      >
-        Add user
-      </button>
+      <div className="flex">
+        <button
+          className="bg-white text-black rounded-lg border-4 border-black px-2 w-[100px]"
+          onClick={addUser}
+        >
+          Add user
+        </button>
+        <Link
+          className="bg-white text-black rounded-lg border-4 border-black px-3 w-[100px]"
+          href="/user"
+        >
+          Go back
+        </Link>
+      </div>
     </div>
   );
 }

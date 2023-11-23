@@ -17,3 +17,10 @@ export async function GET(req, { params }) {
   const result = await Profile.findById(Id);
   return NextResponse.json({ result, success: true });
 }
+
+export async function DELETE(req, { params }) {
+  const record = { _id: params.profileId };
+  await mongoose.connect(connectionStr);
+  const result = await Profile.deleteOne(record);
+  return NextResponse.json({ result, success: true });
+}

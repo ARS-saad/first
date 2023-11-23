@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 function Page() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [password, setPassword] = useState("");
+  const route = useRouter();
 
   const addUser = async () => {
     let res = await fetch("http://localhost:3000/api/profiles", {
@@ -15,7 +17,7 @@ function Page() {
     });
     res = await res.json();
     if (res.success) {
-      alert("New profile added");
+      route.back();
     }
   };
 

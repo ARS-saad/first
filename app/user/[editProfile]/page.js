@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 function Page({ params }) {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const getProductDetail = async () => {
     let productDetail = await fetch(
@@ -31,8 +33,7 @@ function Page({ params }) {
     );
     data = await data.json();
     if (data.result) {
-      alert("profile has updated");
-      window.location = "/user";
+      router.back();
     }
   };
 

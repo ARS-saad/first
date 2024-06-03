@@ -6,8 +6,8 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <main>
-      <p>It's main page</p>
+    <main className="p-20 text-center">
+      <p className="text-2xl">It's main page</p>
       <br />
       <Link href="/login">Go to login page.</Link>
       <br />
